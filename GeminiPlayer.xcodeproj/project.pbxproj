@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07F42BC72A308633000F283F /* GeminiPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F42BC62A308633000F283F /* GeminiPlayer.swift */; };
+		07F42BC92A308669000F283F /* GeminiVideoLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F42BC82A308669000F283F /* GeminiVideoLayer.swift */; };
+		07F42BCB2A308699000F283F /* GeminiControlLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F42BCA2A308699000F283F /* GeminiControlLayer.swift */; };
 		59987F552A1941C10081E473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59987F542A1941C10081E473 /* AppDelegate.swift */; };
 		59987F572A1941C10081E473 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59987F562A1941C10081E473 /* SceneDelegate.swift */; };
 		59987F592A1941C10081E473 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59987F582A1941C10081E473 /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07F42BC62A308633000F283F /* GeminiPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiPlayer.swift; sourceTree = "<group>"; };
+		07F42BC82A308669000F283F /* GeminiVideoLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiVideoLayer.swift; sourceTree = "<group>"; };
+		07F42BCA2A308699000F283F /* GeminiControlLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiControlLayer.swift; sourceTree = "<group>"; };
 		59987F512A1941C10081E473 /* GeminiPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeminiPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59987F542A1941C10081E473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59987F562A1941C10081E473 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +43,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07F42BC52A308624000F283F /* GeminiPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				07F42BC62A308633000F283F /* GeminiPlayer.swift */,
+				07F42BC82A308669000F283F /* GeminiVideoLayer.swift */,
+				07F42BCA2A308699000F283F /* GeminiControlLayer.swift */,
+			);
+			path = GeminiPlayer;
+			sourceTree = "<group>";
+		};
 		59987F482A1941C10081E473 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +75,7 @@
 				59987F542A1941C10081E473 /* AppDelegate.swift */,
 				59987F562A1941C10081E473 /* SceneDelegate.swift */,
 				59987F582A1941C10081E473 /* ViewController.swift */,
+				07F42BC52A308624000F283F /* GeminiPlayer */,
 				59987F5A2A1941C10081E473 /* Main.storyboard */,
 				59987F5D2A1941C20081E473 /* Assets.xcassets */,
 				59987F5F2A1941C20081E473 /* LaunchScreen.storyboard */,
@@ -138,9 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F42BCB2A308699000F283F /* GeminiControlLayer.swift in Sources */,
 				59987F592A1941C10081E473 /* ViewController.swift in Sources */,
 				59987F552A1941C10081E473 /* AppDelegate.swift in Sources */,
 				59987F572A1941C10081E473 /* SceneDelegate.swift in Sources */,
+				07F42BC72A308633000F283F /* GeminiPlayer.swift in Sources */,
+				07F42BC92A308669000F283F /* GeminiVideoLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
