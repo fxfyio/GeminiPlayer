@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		075E0E5A2A552BC0000FBB03 /* bbb_sunflower_1080p_30fps_normal.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 075E0E592A552BC0000FBB03 /* bbb_sunflower_1080p_30fps_normal.mp4 */; };
+		075E0E5D2A552F53000FBB03 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E0E5C2A552F53000FBB03 /* libbz2.tbd */; };
+		075E0E5F2A552F5E000FBB03 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E0E5E2A552F5E000FBB03 /* libz.tbd */; };
+		075E0E612A552F65000FBB03 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E0E602A552F65000FBB03 /* libiconv.tbd */; };
+		075E0E632A552F6C000FBB03 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E0E622A552F6C000FBB03 /* CoreMedia.framework */; };
+		075E0E652A552F74000FBB03 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E0E642A552F74000FBB03 /* VideoToolbox.framework */; };
 		07CCE9132A541245004D1A77 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CCE90C2A541245004D1A77 /* libavutil.a */; };
 		07CCE9142A541245004D1A77 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CCE90D2A541245004D1A77 /* libavfilter.a */; };
 		07CCE9152A541245004D1A77 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CCE90E2A541245004D1A77 /* libavcodec.a */; };
@@ -26,6 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		075E0E592A552BC0000FBB03 /* bbb_sunflower_1080p_30fps_normal.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bbb_sunflower_1080p_30fps_normal.mp4; sourceTree = "<group>"; };
+		075E0E5C2A552F53000FBB03 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		075E0E5E2A552F5E000FBB03 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		075E0E602A552F65000FBB03 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		075E0E622A552F6C000FBB03 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		075E0E642A552F74000FBB03 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		07CCE87E2A541245004D1A77 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		07CCE87F2A541245004D1A77 /* buffersrc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffersrc.h; sourceTree = "<group>"; };
 		07CCE8802A541245004D1A77 /* version_major.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version_major.h; sourceTree = "<group>"; };
@@ -187,6 +199,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075E0E652A552F74000FBB03 /* VideoToolbox.framework in Frameworks */,
+				075E0E632A552F6C000FBB03 /* CoreMedia.framework in Frameworks */,
+				075E0E612A552F65000FBB03 /* libiconv.tbd in Frameworks */,
+				075E0E5F2A552F5E000FBB03 /* libz.tbd in Frameworks */,
+				075E0E5D2A552F53000FBB03 /* libbz2.tbd in Frameworks */,
 				07CCE9172A541245004D1A77 /* libavdevice.a in Frameworks */,
 				07CCE9192A541245004D1A77 /* libswscale.a in Frameworks */,
 				07CCE9142A541245004D1A77 /* libavfilter.a in Frameworks */,
@@ -207,6 +224,26 @@
 				07CCE90B2A541245004D1A77 /* lib */,
 			);
 			path = "ffmpeg-6.0";
+			sourceTree = "<group>";
+		};
+		075E0E582A552B84000FBB03 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				075E0E592A552BC0000FBB03 /* bbb_sunflower_1080p_30fps_normal.mp4 */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		075E0E5B2A552F53000FBB03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				075E0E642A552F74000FBB03 /* VideoToolbox.framework */,
+				075E0E622A552F6C000FBB03 /* CoreMedia.framework */,
+				075E0E602A552F65000FBB03 /* libiconv.tbd */,
+				075E0E5E2A552F5E000FBB03 /* libz.tbd */,
+				075E0E5C2A552F53000FBB03 /* libbz2.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		07CCE87C2A541245004D1A77 /* include */ = {
@@ -437,6 +474,7 @@
 			children = (
 				59987F532A1941C10081E473 /* GeminiPlayer */,
 				59987F522A1941C10081E473 /* Products */,
+				075E0E5B2A552F53000FBB03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -455,6 +493,7 @@
 				59987F542A1941C10081E473 /* AppDelegate.swift */,
 				59987F562A1941C10081E473 /* SceneDelegate.swift */,
 				59987F582A1941C10081E473 /* ViewController.swift */,
+				075E0E582A552B84000FBB03 /* resources */,
 				07F42BC52A308624000F283F /* GeminiPlayer */,
 				59987F5A2A1941C10081E473 /* Main.storyboard */,
 				59987F5D2A1941C20081E473 /* Assets.xcassets */,
@@ -523,6 +562,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075E0E5A2A552BC0000FBB03 /* bbb_sunflower_1080p_30fps_normal.mp4 in Resources */,
 				59987F612A1941C20081E473 /* LaunchScreen.storyboard in Resources */,
 				59987F5E2A1941C20081E473 /* Assets.xcassets in Resources */,
 				59987F5C2A1941C10081E473 /* Main.storyboard in Resources */,
