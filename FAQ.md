@@ -291,3 +291,14 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 链接库：在 "Build Phases" 中，找到 "Link Binary With Libraries" 区域。点击 "+" 按钮来添加新的库。在弹出的窗口中，你可以搜索你想链接的库（如 libbz2.tbd, libz.tbd, libiconv.tbd, CoreMedia.framework, VideoToolbox.framework）。选择库，然后点击 "Add" 按钮。
 ```
+
+模拟器 64 位报错
+解决方法
+
+```
+在Xcode的Build Settings中，"Excluded Architectures"选项用于排除特定的架构。如果你为"Any iOS Simulator SDK"添加了"arm64"，那么当你在模拟器中构建项目时，Xcode就不会试图为arm64架构编译代码。这在一些情况下可能会很有用，尤其是如果你正在使用的第三方库没有为arm64架构的iOS模拟器提供支持。
+
+你可能知道，新一代的Mac使用了Apple自家的M1芯片，而这款芯片的架构是arm64。这意味着，如果你在一台M1的Mac上编译一个iOS模拟器的应用，Xcode默认会试图为arm64架构编译代码。然而，很多第三方库目前还不支持arm64架构的iOS模拟器。这就导致了一个问题：即使你的代码能够在真机上正常编译和运行，你也可能无法在模拟器上编译同样的代码。
+
+通过在"Excluded Architectures"中添加"arm64"，你可以告诉Xcode在模拟器中编译项目时不要为arm64架构编译代码。这样，你就可以在模拟器中编译和运行你的项目，尽管它使用的是x86_64架构的二进制代码，而不是arm64架构。
+```
