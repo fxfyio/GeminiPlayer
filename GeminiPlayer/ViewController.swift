@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         self.view.addSubview(label)
         
         if let filePath = Bundle.main.path(forResource: "bbb_sunflower_1080p_30fps_normal", ofType: "mp4") {
+            av_log_set_level(AV_LOG_DEBUG)
             print("Video file path: \(filePath)")
             open(file: filePath)
         } else {

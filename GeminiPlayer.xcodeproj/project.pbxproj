@@ -217,13 +217,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		071EA61B2A54064A008B94ED /* ffmpeg-6.0 */ = {
+		071EA61B2A54064A008B94ED /* ffmpeg */ = {
 			isa = PBXGroup;
 			children = (
 				07A66F4A2A5681A100C193CA /* include */,
 				07A66F422A5681A100C193CA /* lib */,
 			);
-			path = "ffmpeg-6.0";
+			path = ffmpeg;
 			sourceTree = "<group>";
 		};
 		075E0E582A552B84000FBB03 /* resources */ = {
@@ -491,7 +491,7 @@
 		59987F532A1941C10081E473 /* GeminiPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				071EA61B2A54064A008B94ED /* ffmpeg-6.0 */,
+				071EA61B2A54064A008B94ED /* ffmpeg */,
 				59987F542A1941C10081E473 /* AppDelegate.swift */,
 				59987F562A1941C10081E473 /* SceneDelegate.swift */,
 				59987F582A1941C10081E473 /* ViewController.swift */,
