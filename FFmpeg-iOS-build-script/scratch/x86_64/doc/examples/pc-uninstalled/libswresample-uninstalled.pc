@@ -1,7 +1,7 @@
 prefix=
 exec_prefix=
 libdir=${pcfiledir}/../../../libswresample
-includedir=src
+includedir=/Users/eric/Developer/code/GeminiPlayer/FFmpeg-iOS-build-script/ffmpeg-6.0
 
 Name: libswresample
 Description: FFmpeg audio resampling library

@@ -12,7 +12,7 @@ DOCDIR=$(DESTDIR)${prefix}/share/doc/ffmpeg
 MANDIR=$(DESTDIR)${prefix}/share/man
 PKGCONFIGDIR=$(DESTDIR)${prefix}/lib/pkgconfig
 INSTALL_NAME_DIR=$(SHLIBDIR)
-SRC_PATH=src
+SRC_PATH=/Users/eric/Developer/code/GeminiPlayer/FFmpeg-iOS-build-script/ffmpeg-6.0
 SRC_LINK=src
 ifndef MAIN_MAKEFILE
 SRC_PATH:=$(SRC_PATH:.%=..%)
