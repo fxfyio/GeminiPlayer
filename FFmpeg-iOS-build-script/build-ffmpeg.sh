@@ -34,7 +34,7 @@ fi
 # avresample
 #CONFIGURE_FLAGS="$CONFIGURE_FLAGS --enable-avresample"
 
-ARCHS="arm64"
+ARCHS="x86_64 arm64"
 
 COMPILE="y"
 LIPO="y"

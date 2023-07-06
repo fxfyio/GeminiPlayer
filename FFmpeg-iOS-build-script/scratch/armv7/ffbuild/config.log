@@ -8872,7 +8872,7 @@ LICENSE_LIST='
 LOGNAME=eric
 LSCOLORS=Gxfxcxdxbxegedabagacad
 LS_COLORS='di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
-LaunchInstanceID=AA5FFA38-8268-4691-865D-492C1971ECC2
+LaunchInstanceID=FB2CA41E-06D3-42D2-93E0-858E66955B93
 MACHTYPE=arm64-apple-darwin22
 MATH_FUNCS='
     atanf
@@ -9162,7 +9162,7 @@ webp_parser
 xbm_parser
 xma_parser
 xwd_parser'
-PATH=/opt/MonkeyDev/bin:/opt/homebrew/bin:/opt/MonkeyDev/bin:/opt/homebrew/bin:/opt/MonkeyDev/bin:/opt/homebrew/bin:/opt/MonkeyDev/bin:/opt/homebrew/bin:/Users/eric/.orbstack/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/eric/.cargo/bin
+PATH=/opt/homebrew/opt/libiconv/bin:/opt/MonkeyDev/bin:/opt/homebrew/bin:/Users/eric/.orbstack/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/eric/.cargo/bin
 PATHS_LIST='
     bindir
     datadir
@@ -9177,7 +9177,7 @@ PATHS_LIST='
 '
 PIPESTATUS=([0]="0")
 POSIXLY_CORRECT=y
-PPID=3964
+PPID=2965
 PROGRAM_LIST='
     ffplay
     ffprobe
@@ -9238,7 +9238,7 @@ ipfs_gateway_protocol
 ipns_gateway_protocol'
 PS4='+ '
 PWD=/Users/eric/Developer/code/GeminiPlayer/FFmpeg-iOS-build-script/scratch/armv7
-SECURITYSESSIONID=186a4
+SECURITYSESSIONID=186a3
 SHELL=/bin/zsh
 SHELLOPTS=braceexpand:hashall:interactive-comments:posix
 SHFLAGS='-shared -Wl,-soname,$$(@F)'
@@ -9250,9 +9250,9 @@ SLIBPREF=lib
 SLIBSUF=.so
 SLIB_INSTALL_LINKS='$(SLIBNAME_WITH_MAJOR) $(SLIBNAME)'
 SLIB_INSTALL_NAME='$(SLIBNAME_WITH_VERSION)'
-SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.y26JSW90zR/Listeners
+SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.8VfgxCacIN/Listeners
 SSH_SOCKET_DIR='~/.ssh'
-STARSHIP_SESSION_KEY=3005214417218532
+STARSHIP_SESSION_KEY=1760343532562716
 STARSHIP_SHELL=zsh
 SUBSYSTEM_LIST='
     dct
@@ -15281,230 +15281,230 @@ zoompan_filter_deps=swscale
 zscale_filter=yes
 zscale_filter_deps='libzimg const_nan'
 mktemp -u XXXXXX
-q1q7et
+1flHb1
 test_cpp_condition stddef.h defined __ARM_ARCH_4__ || defined __TARGET_ARCH_4
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_4__ || defined __TARGET_ARCH_4)
     3	#error "unsatisfied condition: defined __ARM_ARCH_4__ || defined __TARGET_ARCH_4"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_4T__ || defined __TARGET_ARCH_4T
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_4T__ || defined __TARGET_ARCH_4T)
     3	#error "unsatisfied condition: defined __ARM_ARCH_4T__ || defined __TARGET_ARCH_4T"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_5__ || defined __TARGET_ARCH_5
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_5__ || defined __TARGET_ARCH_5)
     3	#error "unsatisfied condition: defined __ARM_ARCH_5__ || defined __TARGET_ARCH_5"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_5E__ || defined __TARGET_ARCH_5E
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_5E__ || defined __TARGET_ARCH_5E)
     3	#error "unsatisfied condition: defined __ARM_ARCH_5E__ || defined __TARGET_ARCH_5E"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_5T__ || defined __TARGET_ARCH_5T
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_5T__ || defined __TARGET_ARCH_5T)
     3	#error "unsatisfied condition: defined __ARM_ARCH_5T__ || defined __TARGET_ARCH_5T"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_5TE__ || defined __TARGET_ARCH_5TE
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_5TE__ || defined __TARGET_ARCH_5TE)
     3	#error "unsatisfied condition: defined __ARM_ARCH_5TE__ || defined __TARGET_ARCH_5TE"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_5TEJ__ || defined __TARGET_ARCH_5TEJ
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_5TEJ__ || defined __TARGET_ARCH_5TEJ)
     3	#error "unsatisfied condition: defined __ARM_ARCH_5TEJ__ || defined __TARGET_ARCH_5TEJ"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_6__ || defined __TARGET_ARCH_6
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_6__ || defined __TARGET_ARCH_6)
     3	#error "unsatisfied condition: defined __ARM_ARCH_6__ || defined __TARGET_ARCH_6"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_6J__ || defined __TARGET_ARCH_6J
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_6J__ || defined __TARGET_ARCH_6J)
     3	#error "unsatisfied condition: defined __ARM_ARCH_6J__ || defined __TARGET_ARCH_6J"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_6K__ || defined __TARGET_ARCH_6K
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_6K__ || defined __TARGET_ARCH_6K)
     3	#error "unsatisfied condition: defined __ARM_ARCH_6K__ || defined __TARGET_ARCH_6K"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_6Z__ || defined __TARGET_ARCH_6Z
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_6Z__ || defined __TARGET_ARCH_6Z)
     3	#error "unsatisfied condition: defined __ARM_ARCH_6Z__ || defined __TARGET_ARCH_6Z"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_6KZ__ || defined __TARGET_ARCH_6KZ
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_6KZ__ || defined __TARGET_ARCH_6KZ)
     3	#error "unsatisfied condition: defined __ARM_ARCH_6KZ__ || defined __TARGET_ARCH_6KZ"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_6ZK__ || defined __TARGET_ARCH_6ZK
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_6ZK__ || defined __TARGET_ARCH_6ZK)
     3	#error "unsatisfied condition: defined __ARM_ARCH_6ZK__ || defined __TARGET_ARCH_6ZK"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_6T2__ || defined __TARGET_ARCH_6T2
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_6T2__ || defined __TARGET_ARCH_6T2)
     3	#error "unsatisfied condition: defined __ARM_ARCH_6T2__ || defined __TARGET_ARCH_6T2"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_7__ || defined __TARGET_ARCH_7
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_7__ || defined __TARGET_ARCH_7)
     3	#error "unsatisfied condition: defined __ARM_ARCH_7__ || defined __TARGET_ARCH_7"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_7A__ || defined __TARGET_ARCH_7_A
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_7A__ || defined __TARGET_ARCH_7_A)
     3	#error "unsatisfied condition: defined __ARM_ARCH_7A__ || defined __TARGET_ARCH_7_A"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_7S__ || defined __TARGET_ARCH_7S
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_7S__ || defined __TARGET_ARCH_7S)
     3	#error "unsatisfied condition: defined __ARM_ARCH_7S__ || defined __TARGET_ARCH_7S"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_7R__ || defined __TARGET_ARCH_7_R
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_7R__ || defined __TARGET_ARCH_7_R)
     3	#error "unsatisfied condition: defined __ARM_ARCH_7R__ || defined __TARGET_ARCH_7_R"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_7M__ || defined __TARGET_ARCH_7_M
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_7M__ || defined __TARGET_ARCH_7_M)
     3	#error "unsatisfied condition: defined __ARM_ARCH_7M__ || defined __TARGET_ARCH_7_M"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_7EM__ || defined __TARGET_ARCH_7E_M
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_7EM__ || defined __TARGET_ARCH_7E_M)
     3	#error "unsatisfied condition: defined __ARM_ARCH_7EM__ || defined __TARGET_ARCH_7E_M"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cpp_condition stddef.h defined __ARM_ARCH_8A__ || defined __TARGET_ARCH_8_A
 test_cpp
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	#include <stddef.h>
     2	#if !(defined __ARM_ARCH_8A__ || defined __TARGET_ARCH_8_A)
     3	#error "unsatisfied condition: defined __ARM_ARCH_8A__ || defined __TARGET_ARCH_8_A"
     4	#endif
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -E -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_cflags -mfp16-format=ieee
 test_cc -mfp16-format=ieee
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	int x;
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -mfp16-format=ieee -c -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -mfp16-format=ieee -c -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: unknown argument: '-mfp16-format=ieee'
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 test_ld cc
 test_cc
-BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+BEGIN /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
     1	int main(void){ return 0; }
-END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
-xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -c -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.aWGKfwVr/test.c
+END /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
+xcrun -sdk iphoneos clang -arch armv7 -mios-version-min=13.0 -fembed-bitcode -c -o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.o /var/folders/xh/bjngqfj91zb5mynx5hqf7lmh0000gp/T/ffconf.P5ODPOVO/test.c
 clang: error: invalid iOS deployment version '-mios-version-min=13.0', iOS 10 is the maximum deployment target for 32-bit targets [-Winvalid-ios-deployment-target]
 C compiler test failed.
