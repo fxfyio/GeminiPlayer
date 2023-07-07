@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07017BAE2A57EC6800F9AD10 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 07017BAD2A57EC6800F9AD10 /* Shaders.metal */; };
+		07017BB22A57F62100F9AD10 /* bbb_sunflower_1080p_30fps_normal_10s.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 07017BB12A57F62100F9AD10 /* bbb_sunflower_1080p_30fps_normal_10s.mp4 */; };
+		07017BB42A57F6C400F9AD10 /* output.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07017BB32A57F6C400F9AD10 /* output.jpg */; };
 		075E0E5A2A552BC0000FBB03 /* bbb_sunflower_1080p_30fps_normal.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 075E0E592A552BC0000FBB03 /* bbb_sunflower_1080p_30fps_normal.mp4 */; };
 		075E0E5D2A552F53000FBB03 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E0E5C2A552F53000FBB03 /* libbz2.tbd */; };
 		075E0E5F2A552F5E000FBB03 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E0E5E2A552F5E000FBB03 /* libz.tbd */; };
@@ -32,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07017BAD2A57EC6800F9AD10 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		07017BB12A57F62100F9AD10 /* bbb_sunflower_1080p_30fps_normal_10s.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bbb_sunflower_1080p_30fps_normal_10s.mp4; sourceTree = "<group>"; };
+		07017BB32A57F6C400F9AD10 /* output.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = output.jpg; sourceTree = "<group>"; };
 		075E0E592A552BC0000FBB03 /* bbb_sunflower_1080p_30fps_normal.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bbb_sunflower_1080p_30fps_normal.mp4; sourceTree = "<group>"; };
 		075E0E5C2A552F53000FBB03 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		075E0E5E2A552F5E000FBB03 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -230,6 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				075E0E592A552BC0000FBB03 /* bbb_sunflower_1080p_30fps_normal.mp4 */,
+				07017BB12A57F62100F9AD10 /* bbb_sunflower_1080p_30fps_normal_10s.mp4 */,
+				07017BB32A57F6C400F9AD10 /* output.jpg */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -495,6 +503,7 @@
 				59987F542A1941C10081E473 /* AppDelegate.swift */,
 				59987F562A1941C10081E473 /* SceneDelegate.swift */,
 				59987F582A1941C10081E473 /* ViewController.swift */,
+				07017BAD2A57EC6800F9AD10 /* Shaders.metal */,
 				075E0E582A552B84000FBB03 /* resources */,
 				07F42BC52A308624000F283F /* GeminiPlayer */,
 				59987F5A2A1941C10081E473 /* Main.storyboard */,
@@ -565,8 +574,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				075E0E5A2A552BC0000FBB03 /* bbb_sunflower_1080p_30fps_normal.mp4 in Resources */,
+				07017BB22A57F62100F9AD10 /* bbb_sunflower_1080p_30fps_normal_10s.mp4 in Resources */,
 				59987F612A1941C20081E473 /* LaunchScreen.storyboard in Resources */,
 				59987F5E2A1941C20081E473 /* Assets.xcassets in Resources */,
+				07017BB42A57F6C400F9AD10 /* output.jpg in Resources */,
 				59987F5C2A1941C10081E473 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F42BCB2A308699000F283F /* GeminiControlLayer.swift in Sources */,
+				07017BAE2A57EC6800F9AD10 /* Shaders.metal in Sources */,
 				59987F592A1941C10081E473 /* ViewController.swift in Sources */,
 				59987F552A1941C10081E473 /* AppDelegate.swift in Sources */,
 				59987F572A1941C10081E473 /* SceneDelegate.swift in Sources */,
