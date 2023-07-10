@@ -31,11 +31,14 @@ class ViewController: UIViewController {
         label.text = version + "\n" + config + "\n" + license
         self.view.addSubview(label)
         
-        imageView.frame = CGRect(x: 0, y: 88, width: view.frame.width, height: 160)
+        imageView.frame = CGRect(x: 0, y: 88, width: view.frame.width, height: 200)
         self.view.addSubview(imageView)
         imageView.backgroundColor = .black
-        if let filePath = Bundle.main.path(forResource: "bbb_sunflower_1080p_30fps_normal", ofType: "mp4") {
-            DispatchQueue.global().async {
+        if let filePath = Bundle.main.path(forResource: "bbb_sunflower_1080p_30fps_normal_10s", ofType: "mp4") {
+            DispatchQueue.global().async { [weak self] in
+                guard let self = self else {
+                    return
+                }
                 av_log_set_level(AV_LOG_DEBUG)
                 avformat_network_init()
                 print("Video file path: \(filePath)")
@@ -136,47 +139,88 @@ class ViewController: UIViewController {
                 // 作用是从编解码器中接收解码后的数据帧
                 while avcodec_receive_frame(pCodecCtx, pFrame) == 0 {
                     
-                    let width = Int(pFrame?.pointee.width ?? 0)
-                    let height = Int(pFrame?.pointee.height ?? 0)
-                    // 行跨度 就是视频的宽度
-                    let stride = Int(pFrame?.pointee.linesize.0 ?? 0)
-                    
-                    
-                    
-                    
-                    // 声明了一个可选的CVPixelBuffer变量。这个变量将被用于存储创建的CVPixelBuffer
-                    var pixelBuffer: CVPixelBuffer?
-                    
-                    let attrs = [
-                        kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, //这个键值对表示创建的CVPixelBuffer应该与CGImage兼容。CGImage是Core Graphics框架中的一个数据类型，用于表示位图图像。如果设置了这个属性，你可以将CVPixelBuffer直接转换为CGImage，或者从CGImage创建CVPixelBuffer
-                        kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue //这个键值对表示创建的CVPixelBuffer应该与CGBitmapContext兼容。CGBitmapContext是Core Graphics框架中的一个数据类型，用于处理位图图像的上下文。如果设置了这个属性，你可以将CVPixelBuffer直接用于CGBitmapContext，或者从CGBitmapContext创建CVPixelBuffer。
-                    ]
-                    
-                    let status = CVPixelBufferCreateWithBytes(
-                        nil, // 分配像素缓冲区内存的回调，这里我们让系统自动分配，所以传递nil
-                        width, // 像素缓冲区的宽度，对应于视频帧的宽度
-                        height, // 像素缓冲区的高度，对应于视频帧的高度
-                        kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange, // 像素缓冲区的像素格式，这里我们使用YUV420P格式，对应于我们从FFmpeg解码的视频帧的格式
-                        pFrame!.pointee.data.0!, // 像素数据的指针，这个数据来自于我们从FFmpeg解码的视频帧
-                        stride, // 像素缓冲区的行跨度，对应于视频帧的行跨度
-                        nil, // 释放像素缓冲区内存的回调，这里我们让系统自动释放，所以传递nil
-                        nil, // 额外的像素缓冲区属性，这里我们不需要额外的属性，所以传递nil
-                        attrs as CFDictionary, // 像素缓冲区的属性，我们之前创建了这个字典，以确保像素缓冲区与CGImage和CGBitmapContext兼容
-                        &pixelBuffer // 这是一个指向CVPixelBuffer变量的指针，CVPixelBufferCreateWithBytes函数将创建的CVPixelBuffer存储在这个变量中
-                    )
-                    
-                    
-                    if status != kCVReturnSuccess {
-                        print("创建像素缓冲区错误")
-                        return
+                    if let pointer = pFrame {
+                        let frame = pointer.pointee
+                        // 在这里处理 frame...
+                        
+                        
+                        // 创建 CVPixelBuffer
+                        var pixelBuffer: CVPixelBuffer? = nil
+                        CVPixelBufferCreate(kCFAllocatorDefault, Int(frame.width), Int(frame.height), kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange, nil, &pixelBuffer)
+
+                        // 锁定 CVPixelBuffer
+                        CVPixelBufferLockBaseAddress(pixelBuffer!, [])
+                        
+                        // 将解码后的数据复制到 CVPixelBuffer
+                        let yPlane = CVPixelBufferGetBaseAddressOfPlane(pixelBuffer!, 0)
+                        let uvPlane = CVPixelBufferGetBaseAddressOfPlane(pixelBuffer!, 1)
+                        //解锁
+                        CVPixelBufferUnlockBaseAddress(pixelBuffer!, [])
+
+                        memcpy(yPlane, frame.data.0, Int(frame.linesize.0 * frame.height))
+                        memcpy(uvPlane, frame.data.1, Int(frame.linesize.1 * (frame.height / 2)))
+                        
+                        
+                        // 创建一个 CIImage 来显示 CVPixelBuffer
+                        let ciImage = CIImage(cvPixelBuffer: pixelBuffer!)
+                        
+                        // 将 CIImage 显示在屏幕上，例如在一个 UIImageView 中
+                        DispatchQueue.main.async { [weak self] in
+                            guard let self = self else {
+                                return
+                            }
+                            let image = UIImage(ciImage: ciImage)
+                            self.imageView.image = image
+                            
+                            
+                            print("展示")
+//                            self.saveImageToSandbox(image: image, filename: "\(Date()).png")
+                        }
+
                     }
+
                     
-                    let uiImage =  UIImage(pixelBuffer: pixelBuffer!)!
-                    let image = convertYUV420ToRGB8888(yuvImage: uiImage)
-                    DispatchQueue.main.async { [self] in
-                        self.imageView.image = image//UIImage(named: "output.jpg")
-                    }
-    
+//                    let width = Int(pFrame?.pointee.width ?? 0)
+//                    let height = Int(pFrame?.pointee.height ?? 0)
+//                    // 行跨度 就是视频的宽度
+//                    let stride = Int(pFrame?.pointee.linesize.0 ?? 0)
+//
+//
+//
+//
+//                    // 声明了一个可选的CVPixelBuffer变量。这个变量将被用于存储创建的CVPixelBuffer
+//                    var pixelBuffer: CVPixelBuffer?
+//
+//                    let attrs = [
+//                        kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, //这个键值对表示创建的CVPixelBuffer应该与CGImage兼容。CGImage是Core Graphics框架中的一个数据类型，用于表示位图图像。如果设置了这个属性，你可以将CVPixelBuffer直接转换为CGImage，或者从CGImage创建CVPixelBuffer
+//                        kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue //这个键值对表示创建的CVPixelBuffer应该与CGBitmapContext兼容。CGBitmapContext是Core Graphics框架中的一个数据类型，用于处理位图图像的上下文。如果设置了这个属性，你可以将CVPixelBuffer直接用于CGBitmapContext，或者从CGBitmapContext创建CVPixelBuffer。
+//                    ]
+//
+//                    let status = CVPixelBufferCreateWithBytes(
+//                        nil, // 分配像素缓冲区内存的回调，这里我们让系统自动分配，所以传递nil
+//                        width, // 像素缓冲区的宽度，对应于视频帧的宽度
+//                        height, // 像素缓冲区的高度，对应于视频帧的高度
+//                        kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange, // 像素缓冲区的像素格式，这里我们使用YUV420P格式，对应于我们从FFmpeg解码的视频帧的格式
+//                        pFrame!.pointee.data.0!, // 像素数据的指针，这个数据来自于我们从FFmpeg解码的视频帧
+//                        stride, // 像素缓冲区的行跨度，对应于视频帧的行跨度
+//                        nil, // 释放像素缓冲区内存的回调，这里我们让系统自动释放，所以传递nil
+//                        nil, // 额外的像素缓冲区属性，这里我们不需要额外的属性，所以传递nil
+//                        attrs as CFDictionary, // 像素缓冲区的属性，我们之前创建了这个字典，以确保像素缓冲区与CGImage和CGBitmapContext兼容
+//                        &pixelBuffer // 这是一个指向CVPixelBuffer变量的指针，CVPixelBufferCreateWithBytes函数将创建的CVPixelBuffer存储在这个变量中
+//                    )
+//
+//
+//                    if status != kCVReturnSuccess {
+//                        print("创建像素缓冲区错误")
+//                        return
+//                    }
+//
+//                    let uiImage =  UIImage(pixelBuffer: pixelBuffer!)!
+//                    let image = convertYUV420ToRGB8888(yuvImage: uiImage)
+//                    DispatchQueue.main.async { [self] in
+//                        self.imageView.image = image//UIImage(named: "output.jpg")
+//                    }
+//
                     
 //                   let uiImage =  pixelBufferToImage(pixelBuffer: pixelBuffer!)
                     
