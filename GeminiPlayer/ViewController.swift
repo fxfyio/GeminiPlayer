@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         imageView.frame = CGRect(x: 0, y: 88, width: view.frame.width, height: 160)
         self.view.addSubview(imageView)
         imageView.backgroundColor = .black
-        if let filePath = Bundle.main.path(forResource: "bbb_sunflower_1080p_30fps_normal_10s", ofType: "mp4") {
+        if let filePath = Bundle.main.path(forResource: "bbb_sunflower_1080p_30fps_normal", ofType: "mp4") {
             DispatchQueue.global().async {
                 av_log_set_level(AV_LOG_DEBUG)
                 avformat_network_init()
