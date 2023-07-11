@@ -9,17 +9,25 @@ import UIKit
 import Accelerate
 //import MetalKit
 import CoreGraphics
+import AVFoundation
 
 
 class ViewController: UIViewController {
-    let imageView = UIImageView()
+    let playerView = UIView()
 
-    
+    let videoLayer = AVSampleBufferDisplayLayer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        videoLayer.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 200)
+        videoLayer.videoGravity = .resizeAspect
+        videoLayer.backgroundColor = UIColor.red.cgColor
+        playerView.layer.addSublayer(videoLayer)
 
-        
+        videoLayer.addObserver(self, forKeyPath: "status", options: [.new], context: nil)
+        videoLayer.addObserver(self, forKeyPath: "error", options: [.new], context: nil)
+
         let version = String(cString: av_version_info())
         let config = String(cString: avcodec_configuration())
         let license = String(cString: avcodec_license())
@@ -31,10 +39,10 @@ class ViewController: UIViewController {
         label.text = version + "\n" + config + "\n" + license
         self.view.addSubview(label)
         
-        imageView.frame = CGRect(x: 0, y: 88, width: view.frame.width, height: 200)
-        self.view.addSubview(imageView)
-        imageView.backgroundColor = .black
-        if let filePath = Bundle.main.path(forResource: "bbb_sunflower_1080p_30fps_normal_10s", ofType: "mp4") {
+        playerView.frame = CGRect(x: 0, y: 88, width: view.frame.width, height: 200)
+        self.view.addSubview(playerView)
+        playerView.backgroundColor = .black
+        if let filePath = Bundle.main.path(forResource: "bbb_sunflower_1080p_30fps_normal", ofType: "mp4") {
             DispatchQueue.global().async { [weak self] in
                 guard let self = self else {
                     return
@@ -50,6 +58,25 @@ class ViewController: UIViewController {
         }
     }
     
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "status" {
+            if let status = change?[.newKey] as? Int {
+                switch status {
+                case 0:
+                    print("The status of the player item is unknown.")
+                case 1:
+                    print("The player item is ready to play.")
+                case 2:
+                    print("The player item failed. See the error property for more information.")
+                default:
+                    break
+                }
+            }
+        } else if keyPath == "error" {
+            print("xxx")
+        }
+    }
+
     
     func open(file path: String?) {
         guard path != nil else {
@@ -140,96 +167,85 @@ class ViewController: UIViewController {
                 while avcodec_receive_frame(pCodecCtx, pFrame) == 0 {
                     
                     if let pointer = pFrame {
-                        let frame = pointer.pointee
-                        // 在这里处理 frame...
                         
-                        
-                        // 创建 CVPixelBuffer
-                        var pixelBuffer: CVPixelBuffer? = nil
-                        CVPixelBufferCreate(kCFAllocatorDefault, Int(frame.width), Int(frame.height), kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange, nil, &pixelBuffer)
+                        // 获取 AVFrame 的像素数据和行大小
+                        // 获取 AVFrame 的像素数据和行大小
+                        let frameData: [UnsafePointer<UInt8>?] = [
+                            UnsafePointer(pointer.pointee.data.0!),
+                            UnsafePointer(pointer.pointee.data.1!),
+                            UnsafePointer(pointer.pointee.data.2!)
+                        ]
 
-                        // 锁定 CVPixelBuffer
-                        CVPixelBufferLockBaseAddress(pixelBuffer!, [])
-                        
-                        // 将解码后的数据复制到 CVPixelBuffer
-                        let yPlane = CVPixelBufferGetBaseAddressOfPlane(pixelBuffer!, 0)
-                        let uvPlane = CVPixelBufferGetBaseAddressOfPlane(pixelBuffer!, 1)
-                        //解锁
-                        CVPixelBufferUnlockBaseAddress(pixelBuffer!, [])
 
-                        memcpy(yPlane, frame.data.0, Int(frame.linesize.0 * frame.height))
-                        memcpy(uvPlane, frame.data.1, Int(frame.linesize.1 * (frame.height / 2)))
+                        let frameLinesize = [
+                            Int32(pointer.pointee.linesize.0),
+                            Int32(pointer.pointee.linesize.1),
+                            Int32(pointer.pointee.linesize.2)
+                        ]
+
+
+                        // 创建一个 SwsContext 来进行像素格式转换和缩放
+                        let swsContext = sws_getContext(
+                            pCodecCtx!.pointee.width,
+                            pCodecCtx!.pointee.height,
+                            pCodecCtx!.pointee.pix_fmt,
+                            pCodecCtx!.pointee.width,
+                            pCodecCtx!.pointee.height,
+                            AV_PIX_FMT_RGB24,
+                            SWS_BILINEAR,
+                            nil, nil, nil
+                        )
                         
-                        
-                        // 创建一个 CIImage 来显示 CVPixelBuffer
-                        let ciImage = CIImage(cvPixelBuffer: pixelBuffer!)
-                        
-                        // 将 CIImage 显示在屏幕上，例如在一个 UIImageView 中
-                        DispatchQueue.main.async { [weak self] in
-                            guard let self = self else {
-                                return
-                            }
-                            let image = UIImage(ciImage: ciImage)
-                            self.imageView.image = image
-                            
-                            
-                            print("展示")
-//                            self.saveImageToSandbox(image: image, filename: "\(Date()).png")
+                        // 创建一个 CVPixelBuffer 来保存解码后的像素数据
+                        var pixelBuffer: CVPixelBuffer?
+                        let attrs = [
+                            kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue,
+                            kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue
+                        ] as CFDictionary
+                        let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(pCodecCtx!.pointee.width), Int(pCodecCtx!.pointee.height), kCVPixelFormatType_32ARGB, attrs, &pixelBuffer)
+                        guard status == kCVReturnSuccess else {
+                            print("Error: could not create CVPixelBuffer")
+                            continue
                         }
 
-                    }
 
+                        // 获取 CVPixelBuffer 的像素数据和行大小
+                        CVPixelBufferLockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+                        let pixelBufferBaseAddress = CVPixelBufferGetBaseAddress(pixelBuffer!)!.assumingMemoryBound(to: UInt8.self)
+                        let pixelBufferBytesPerRow = CVPixelBufferGetBytesPerRow(pixelBuffer!)
+                      
+                        let frameDataBuffer = frameData.withUnsafeBufferPointer { UnsafePointer($0.baseAddress) }
+
+                        // 将像素数据从 AVFrame 复制到 CVPixelBuffer
+                        var dst: [UnsafeMutablePointer<UInt8>?] = [pixelBufferBaseAddress]
+                        var dstStride = [Int32(pixelBufferBytesPerRow)]
+                        sws_scale(
+                            swsContext,
+                            frameData,
+                            frameLinesize,
+                            0,
+                            pCodecCtx!.pointee.height,
+                            &dst,
+                            &dstStride
+                        )
+                        
+                        // 创建一个 CMSampleBuffer
+                        var sampleBuffer: CMSampleBuffer?
+                        var timingInfo = CMSampleTimingInfo(duration: CMTime.invalid, presentationTimeStamp: CMTime.invalid, decodeTimeStamp: CMTime.invalid)
+                        var formatDescription: CMVideoFormatDescription?
+                        CMVideoFormatDescriptionCreateForImageBuffer(allocator: kCFAllocatorDefault, imageBuffer: pixelBuffer!, formatDescriptionOut: &formatDescription)
+                        CMSampleBufferCreateForImageBuffer(allocator: kCFAllocatorDefault, imageBuffer: pixelBuffer!, dataReady: true, makeDataReadyCallback: nil, refcon: nil, formatDescription: formatDescription!, sampleTiming: &timingInfo, sampleBufferOut: &sampleBuffer)
+                        
+                        // 将 CMSampleBuffer 添加到 videoLayer
+                        DispatchQueue.main.async {
+                            if self.videoLayer.isReadyForMoreMediaData {
+                                self.videoLayer.enqueue(sampleBuffer!)
+                            }
+                        }
+                        
+                    }
                     
-//                    let width = Int(pFrame?.pointee.width ?? 0)
-//                    let height = Int(pFrame?.pointee.height ?? 0)
-//                    // 行跨度 就是视频的宽度
-//                    let stride = Int(pFrame?.pointee.linesize.0 ?? 0)
-//
-//
-//
-//
-//                    // 声明了一个可选的CVPixelBuffer变量。这个变量将被用于存储创建的CVPixelBuffer
-//                    var pixelBuffer: CVPixelBuffer?
-//
-//                    let attrs = [
-//                        kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, //这个键值对表示创建的CVPixelBuffer应该与CGImage兼容。CGImage是Core Graphics框架中的一个数据类型，用于表示位图图像。如果设置了这个属性，你可以将CVPixelBuffer直接转换为CGImage，或者从CGImage创建CVPixelBuffer
-//                        kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue //这个键值对表示创建的CVPixelBuffer应该与CGBitmapContext兼容。CGBitmapContext是Core Graphics框架中的一个数据类型，用于处理位图图像的上下文。如果设置了这个属性，你可以将CVPixelBuffer直接用于CGBitmapContext，或者从CGBitmapContext创建CVPixelBuffer。
-//                    ]
-//
-//                    let status = CVPixelBufferCreateWithBytes(
-//                        nil, // 分配像素缓冲区内存的回调，这里我们让系统自动分配，所以传递nil
-//                        width, // 像素缓冲区的宽度，对应于视频帧的宽度
-//                        height, // 像素缓冲区的高度，对应于视频帧的高度
-//                        kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange, // 像素缓冲区的像素格式，这里我们使用YUV420P格式，对应于我们从FFmpeg解码的视频帧的格式
-//                        pFrame!.pointee.data.0!, // 像素数据的指针，这个数据来自于我们从FFmpeg解码的视频帧
-//                        stride, // 像素缓冲区的行跨度，对应于视频帧的行跨度
-//                        nil, // 释放像素缓冲区内存的回调，这里我们让系统自动释放，所以传递nil
-//                        nil, // 额外的像素缓冲区属性，这里我们不需要额外的属性，所以传递nil
-//                        attrs as CFDictionary, // 像素缓冲区的属性，我们之前创建了这个字典，以确保像素缓冲区与CGImage和CGBitmapContext兼容
-//                        &pixelBuffer // 这是一个指向CVPixelBuffer变量的指针，CVPixelBufferCreateWithBytes函数将创建的CVPixelBuffer存储在这个变量中
-//                    )
-//
-//
-//                    if status != kCVReturnSuccess {
-//                        print("创建像素缓冲区错误")
-//                        return
-//                    }
-//
-//                    let uiImage =  UIImage(pixelBuffer: pixelBuffer!)!
-//                    let image = convertYUV420ToRGB8888(yuvImage: uiImage)
-//                    DispatchQueue.main.async { [self] in
-//                        self.imageView.image = image//UIImage(named: "output.jpg")
-//                    }
-//
                     
-//                   let uiImage =  pixelBufferToImage(pixelBuffer: pixelBuffer!)
-                    
-//                    let ciImage = CIImage(cvPixelBuffer: pixelBuffer!)
-                    
-//                    let uiImage = UIImage(ciImage: ciImage)
-//                    DispatchQueue.main.async {
-//                        self.imageView.image = uiImage
-//                    }
                 }
             }
             
